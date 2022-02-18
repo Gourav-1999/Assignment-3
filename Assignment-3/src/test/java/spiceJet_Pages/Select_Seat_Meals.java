@@ -30,21 +30,16 @@ public class Select_Seat_Meals {
 		driver.findElement(By.xpath("(//*[text()=\"Select Meals\"]//..)[1]")).click();
 	}
 	
-	public void selectMeal() {
+	public void selectMeal() throws InterruptedException {
 		//select meal
 		driver.findElement(By.xpath("//*[text()=\"Cucumber, tomato & cheese in multigrain bread\"]")).click();
 		//done
 		driver.findElement(By.xpath("(//*[text()=\"Done\"]//..)[1]")).click();
+		Thread.sleep(4000);
 	}
 	
 	public void continueButtonAgain() {
 		//continue
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				driver.findElement(By.xpath("(//*[text()=\"Continue\"]//..)[1]")).click();
-			}
+		driver.findElement(By.xpath("(//*[text()=\"Continue\"]//..)[1]")).click();
 	}
+}
