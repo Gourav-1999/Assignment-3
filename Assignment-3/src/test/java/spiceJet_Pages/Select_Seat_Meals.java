@@ -12,7 +12,7 @@ public class Select_Seat_Meals {
 	}
 	
 	public void selectSeat() {
-		driver.findElement(By.xpath("(//*[text()=\"2A\"])[1]")).click();
+		driver.findElement(By.xpath("(//*[text()=\"3A\"])[1]")).click();
 	}
 	
 	public void adjacentSeat() {
