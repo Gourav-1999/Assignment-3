@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Welcome_Board {
 
-	WebDriver driver=null;
+	WebDriver driver = this.driver = ChromeBrowser.driver;
 	
 	public Welcome_Board(WebDriver driver) {
 		this.driver=driver;

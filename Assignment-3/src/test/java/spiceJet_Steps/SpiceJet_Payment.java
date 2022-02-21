@@ -10,6 +10,7 @@ public class SpiceJet_Payment {
 
 	WebDriver driver =	this.driver = SpiceJet_WelcomeBoard.driver;
 	
+	Payment pay = new Payment(driver);
 	
 	@Given("user is on payment page")
 	public void user_is_on_payment_page() {
@@ -18,23 +19,17 @@ public class SpiceJet_Payment {
 
 	@When("user fetch data from payment page")
 	public void user_fetch_data_from_payment_page() {
-		//verify location
-	    String loc =	driver.findElement(By.xpath("//*[@style=\"flex: 0.67 1 0%; -webkit-box-flex: 0.67;\"]")).getText();
-		System.out.println(loc);
-		//verify Price
-		String price = driver.findElement(By.xpath("//*[@style=\"flex: 0.33 1 0%; -webkit-box-flex: 0.33;\"]")).getText();
-		System.out.println(price);
+		pay.fetchData();
 	}
 
 	@And("verify the prices and cities name are same or not")
 	public void verify_the_prices_and_cities_name_are_same_or_not() {
-	   System.out.println("Data is varified!");
+	  pay.verifyData();
 	}
 
 	@And("verify prices without adding convenience fee")
 	public void verify_prices_without_adding_convenience_fee() {
-		String convenienceFee = driver.findElement(By.xpath("(//*[@class=\"css-1dbjc4n r-18u37iz\"])[2]")).getText();
-		System.out.println("Convenience Price: "+convenienceFee);
+		pay.convenienceFee();
 	}
 
 	@Then("user print message all test cases are correctlly done")
