@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.*;
+import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Payment;
 
 public class SpiceJet_Payment {
 
-	WebDriver driver =	this.driver = SpiceJet_WelcomeBoard.driver;
+	WebDriver driver =	this.driver = ChromeBrowser.objDriver;
 	
 	Payment pay = new Payment(driver);
 	

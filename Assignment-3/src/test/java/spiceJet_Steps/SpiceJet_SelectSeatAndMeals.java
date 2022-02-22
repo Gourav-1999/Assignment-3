@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.*;
+import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Select_Seat_Meals;
 
 public class SpiceJet_SelectSeatAndMeals {
 	
-	WebDriver driver =	this.driver = SpiceJet_WelcomeBoard.driver;
+	WebDriver driver =	this.driver = ChromeBrowser.objDriver;
 	
 	Select_Seat_Meals SM = new Select_Seat_Meals(driver);
 

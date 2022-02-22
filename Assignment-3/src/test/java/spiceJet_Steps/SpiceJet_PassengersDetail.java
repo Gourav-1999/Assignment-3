@@ -1,15 +1,20 @@
 package spiceJet_Steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.*;
+import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.PassengerDetails;
 
-public class SpiceJet_PassengersDetail {
+public class SpiceJet_PassengersDetail extends ChromeBrowser{
 
-	WebDriver driver =	this.driver = SpiceJet_WelcomeBoard.driver;
-	PassengerDetails PD = new PassengerDetails(driver);
+	public SpiceJet_PassengersDetail(WebDriver objDriver) {
+		super(objDriver);
+		// TODO Auto-generated constructor stub
+	}
+
+	//WebDriver driver =	this.driver = ChromeBrowser.objDriver;
+	PassengerDetails PD = new PassengerDetails(objDriver);
 	
 	@Given("user is on spiceJet passengers page")
 	public void user_is_on_spice_jet_passengers_page() {

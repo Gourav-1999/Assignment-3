@@ -2,36 +2,47 @@ package spiceJet_Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class Welcome_Board {
+import spiceJet_Steps.SpiceJet_WelcomeBoard;
 
-	WebDriver driver = this.driver = ChromeBrowser.driver;
+public class Welcome_Board extends ChromeBrowser{
+
 	
-	public Welcome_Board(WebDriver driver) {
-		this.driver=driver;
+	public ChromeBrowser objDriver1;
+	
+	public Welcome_Board(WebDriver objDriver1) {
+		super(objDriver1);
+		// TODO Auto-generated constructor stub
 	}
+
+	
+	
 	
 	public void fromLocation() {
 		
-		driver.findElement(By.xpath("//*[text()=\"From\"]")).click();
-		driver.findElement(By.xpath("//*[text()=\"India\"]")).click();
-		driver.findElement(By.xpath("//*[text()=\"Delhi\"]")).click();
+		objDriver1.findElement(By.xpath("//*[text()=\"From\"]")).click();
+		objDriver1.findElement(By.xpath("//*[text()=\"India\"]")).click();
+		objDriver1.findElement(By.xpath("//*[text()=\"Delhi\"]")).click();
 	}
 	
 	public void toLocation() {
 		
-		driver.findElement(By.xpath("//*[text()=\"Bengaluru\"]")).click();
+		objDriver1.findElement(By.xpath("//*[text()=\"Bengaluru\"]")).click();
 	}
 	
 	public void departureDate() {
 		
-		driver.findElement(By.xpath("//*[@data-testid=\"undefined-month-March-2022\"]//div[text()=\"18\"]")).click();
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"undefined-month-March-2022\"]//div[text()=\"18\"]")).click();
 		
 	}
 	
 	public void searchButton() {
 		
-		driver.findElement(By.xpath("//*[@data-testid=\"home-page-flight-cta\"]")).click();
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"home-page-flight-cta\"]")).click();
 	}
+	
+	
 	
 }
