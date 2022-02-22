@@ -1,31 +1,14 @@
 package spiceJet_Steps;
 
-import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.*;
-import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Welcome_Board;
 
-public class SpiceJet_WelcomeBoard {
+public class SpiceJet_WelcomeBoard extends Welcome_Board {
 
 
-	public WebDriver driver ;
-	 ChromeBrowser browser = new ChromeBrowser(driver);
-	// Welcome_Board WB = new Welcome_Board(driver);
 	
- /*  public SpiceJet_WelcomeBoard(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}*/
+	 Welcome_Board browser = new Welcome_Board();
   
-   
-  /*@Before
-   public void browserSetup() {
-	   System.setProperty("webdriver.chrome.driver", "C:\\Users\\gourav.vig\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.get("https://www.spicejet.com/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
-   }*/
   
 	@Given("user is on spiceJet welcome board page")
 	public void user_is_on_spice_jet_welcome_board_page() {

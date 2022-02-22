@@ -1,17 +1,13 @@
 package spiceJet_Steps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.*;
-import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Select_Seat_Meals;
 
-public class SpiceJet_SelectSeatAndMeals {
+public class SpiceJet_SelectSeatAndMeals extends Select_Seat_Meals {
 	
-	WebDriver driver =	this.driver = ChromeBrowser.objDriver;
 	
-	Select_Seat_Meals SM = new Select_Seat_Meals(driver);
+	
+	Select_Seat_Meals SM = new Select_Seat_Meals();
 
 	@Given("user already fill passenger details and user is on Add-on page")
 	public void user_already_fill_passenger_details_and_user_is_on_add_on_page() {

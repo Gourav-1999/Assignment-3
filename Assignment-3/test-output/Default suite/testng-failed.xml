@@ -6,11 +6,8 @@
       <class name="test_Pages.TestNG">
         <methods>
           <include name="payment"/>
-          <include name="welcomeBoard"/>
           <include name="tearDown"/>
-          <include name="selectFlight"/>
           <include name="setUp"/>
-          <include name="passengerDetails"/>
           <include name="selectSeatAndMeal"/>
         </methods>
       </class> <!-- test_Pages.TestNG -->

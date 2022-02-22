@@ -1,18 +1,14 @@
 package spiceJet_Steps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.*;
-import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Select_Flight;
 
-public class SpiceJet_SelectFlight {
+public class SpiceJet_SelectFlight extends Select_Flight{
 
 
-	WebDriver driver =	this.driver = ChromeBrowser.objDriver;
+
 	
-	Select_Flight SF = new Select_Flight(driver);
+	Select_Flight SF = new Select_Flight();
 	
 	@Given("user is on spiceJet flight search page")
 	public void user_is_on_spice_jet_flight_search_page() {

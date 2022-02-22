@@ -1,17 +1,11 @@
 package spiceJet_Steps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.*;
-import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.Payment;
 
-public class SpiceJet_Payment {
-
-	WebDriver driver =	this.driver = ChromeBrowser.objDriver;
+public class SpiceJet_Payment extends Payment{
 	
-	Payment pay = new Payment(driver);
+	Payment pay = new Payment();
 	
 	@Given("user is on payment page")
 	public void user_is_on_payment_page() {

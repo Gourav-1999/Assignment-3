@@ -1,10 +1,5 @@
 package test_Pages;
 
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.PassengerDetails;
 import spiceJet_Pages.Payment;
@@ -12,35 +7,28 @@ import spiceJet_Pages.Select_Flight;
 import spiceJet_Pages.Select_Seat_Meals;
 import spiceJet_Pages.Welcome_Board;
 
-public class Spice_Jet {
+public class Spice_Jet extends ChromeBrowser {
 
-    static WebDriver driver = null;
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver","C:/Users/gourav.vig/eclipse-workspace/Cucumber/drivers/chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-		driver.manage().window().maximize();
-		driver.get("https://www.spicejet.com/");
 		welcomeBoard();
 		selectFlight();
 		passengerDetails();
 		selectSeatAndMeal();
 		payment();
-		driver.quit();
+		objDriver1.quit();
 		
 	}
 	
 	
-	public static void chromeBrowser() {
-		ChromeBrowser browser = new ChromeBrowser(driver);
+	public static void setUp() {
+		ChromeBrowser browser = new ChromeBrowser();
 		browser.launch_ChromeBrowser();
 	}
 	
 	public static void welcomeBoard() {
-		Welcome_Board WB = new Welcome_Board(driver);
+		Welcome_Board WB = new Welcome_Board();
 		WB.fromLocation();
 		WB.toLocation();
 		WB.departureDate();
@@ -48,19 +36,19 @@ public class Spice_Jet {
 	}
 	
 	public static void selectFlight() {
-		Select_Flight SF = new Select_Flight(driver);
+		Select_Flight SF = new Select_Flight();
 		SF.selectFlight();
 		SF.continueButton();
 	}
 	
 	public static void passengerDetails() {
-		PassengerDetails PD = new PassengerDetails(driver);
+		PassengerDetails PD = new PassengerDetails();
 		PD.details();
 		PD.continueButton2();
 	}
 	
 	public static void selectSeatAndMeal() throws InterruptedException {
-		Select_Seat_Meals SM = new Select_Seat_Meals(driver);
+		Select_Seat_Meals SM = new Select_Seat_Meals();
 		SM.selectSeat();
 		SM.adjacentSeat();
 		SM.accept();
@@ -70,7 +58,7 @@ public class Spice_Jet {
 	}
 	
 	public static void payment() {
-		Payment pay = new Payment(driver);
+		Payment pay = new Payment();
 		pay.fetchData();
 		pay.verifyData();
 		pay.convenienceFee();

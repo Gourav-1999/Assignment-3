@@ -15,25 +15,20 @@ import spiceJet_Pages.Select_Flight;
 import spiceJet_Pages.Select_Seat_Meals;
 import spiceJet_Pages.Welcome_Board;
 
-public class TestNG {
+public class TestNG extends ChromeBrowser{
 
-static WebDriver driver = null;
 	
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver","C:/Users/gourav.vig/eclipse-workspace/Cucumber/drivers/chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-		driver.manage().window().maximize();
-		driver.get("https://www.spicejet.com/");
+		ChromeBrowser b = new ChromeBrowser();
+		b.launch_ChromeBrowser();
 	}
 	
 	
 	@Test(priority = 0)
 	public static void welcomeBoard() {
-		Welcome_Board WB = new Welcome_Board(driver);
+		Welcome_Board WB = new Welcome_Board();
 		WB.fromLocation();
 		WB.toLocation();
 		WB.departureDate();
@@ -41,19 +36,19 @@ static WebDriver driver = null;
 	}
 	@Test(priority = 1)
 	public static void selectFlight() {
-		Select_Flight SF = new Select_Flight(driver);
+		Select_Flight SF = new Select_Flight();
 		SF.selectFlight();
 		SF.continueButton();
 	}
 	@Test(priority = 2)
 	public static void passengerDetails() {
-		PassengerDetails PD = new PassengerDetails(driver);
+		PassengerDetails PD = new PassengerDetails();
 		PD.details();
 		PD.continueButton2();
 	}
 	@Test(priority = 3)
 	public static void selectSeatAndMeal() throws InterruptedException {
-		Select_Seat_Meals SM = new Select_Seat_Meals(driver);
+		Select_Seat_Meals SM = new Select_Seat_Meals();
 		SM.selectSeat();
 		SM.adjacentSeat();
 		SM.accept();
@@ -63,15 +58,15 @@ static WebDriver driver = null;
 	}
 	@Test(priority = 4)
 	public static void payment() {
-		Payment pay = new Payment(driver);
+		Payment pay = new Payment();
 		pay.fetchData();
 		pay.verifyData();
 		pay.convenienceFee();
 	}
 	@AfterTest
 	public void tearDown() {
-		driver.close();
-		driver.quit();
+		objDriver1.close();
+		objDriver1.quit();
 	}
 	
 }
