@@ -5,34 +5,38 @@ import org.openqa.selenium.By;
 public class PassengerDetails extends ChromeBrowser {
 
 
-	public void details() {
-		// select title
+	public void contactDetails(String title,String name,String lastName,String contact,String email,String city) {
+		// select title	
+		
 		objDriver1.findElement(By.xpath("//*[@data-testid=\"title-contact-detail-card\"]")).click();
-		objDriver1.findElement(By.xpath("//*[text()=\"Mr\"]")).click();
+		String xpath = "//*[text()=\"title\"]";
+		objDriver1.findElement(By.xpath(xpath.replace("title", title))).click();
 
 		// contact details
 		// name
-		objDriver1.findElement(By.xpath("//*[@data-testid=\"first-inputbox-contact-details\"]")).sendKeys("Balle");
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"first-inputbox-contact-details\"]")).sendKeys( name);
 		// last name
-		objDriver1.findElement(By.xpath("//*[@data-testid=\"last-inputbox-contact-details\"]")).sendKeys("Balle");
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"last-inputbox-contact-details\"]")).sendKeys( lastName);
 		// contact
-		objDriver1.findElement(By.xpath("//*[@data-testid=\"contact-number-input-box\"]")).sendKeys("9876543210");
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"contact-number-input-box\"]")).sendKeys( contact);
 		// email
 		objDriver1.findElement(By.xpath("//*[@data-testid=\"emailAddress-inputbox-contact-details\"]"))
-				.sendKeys("xyz@gmail.com");
+				.sendKeys( email);
 		// town and city
-		objDriver1.findElement(By.xpath("//*[@data-testid=\"city-inputbox-contact-details\"]")).sendKeys("FurFuri Nagar");
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"city-inputbox-contact-details\"]")).sendKeys( city);
+	}
 
-		// Passenger details
+		public void passengerDetails(String name,String lastName,String number) {
 		// name
 		objDriver1.findElement(By.xpath("//*[@data-testid=\"traveller-0-first-traveller-info-input-box\"]"))
-				.sendKeys("Balle");
+				.sendKeys( name);
 		// last
 		objDriver1.findElement(By.xpath("//*[@data-testid=\"traveller-0-last-traveller-info-input-box\"]"))
-				.sendKeys("Balle");
+				.sendKeys( lastName);
 		// number
-		objDriver1.findElement(By.xpath("//*[@data-testid=\"sc-member-mobile-number-input-box\"]")).sendKeys("9876543210");
-	}
+		objDriver1.findElement(By.xpath("//*[@data-testid=\"sc-member-mobile-number-input-box\"]")).sendKeys( number);
+			}
+
 	
 	public void continueButton2() {
 		objDriver1.findElement(By.xpath("//*[@data-testid=\"traveller-info-continue-cta\"]")).click();

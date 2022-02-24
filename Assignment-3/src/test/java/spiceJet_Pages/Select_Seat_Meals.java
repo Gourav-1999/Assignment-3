@@ -6,8 +6,9 @@ public class Select_Seat_Meals extends ChromeBrowser {
 
 	
 	
-	public void selectSeat() {
-		objDriver1.findElement(By.xpath("(//*[text()=\"1A\"])[1]")).click();
+	public void selectSeat(String seat) {
+		String seatXpath = "(//*[text()=\"seat\"])[1]";
+		objDriver1.findElement(By.xpath(seatXpath.replace("seat", seat))).click();
 	}
 	
 	public void adjacentSeat() {

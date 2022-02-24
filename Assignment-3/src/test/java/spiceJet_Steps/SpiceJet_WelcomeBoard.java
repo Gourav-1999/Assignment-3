@@ -18,17 +18,17 @@ public class SpiceJet_WelcomeBoard extends Welcome_Board {
 		
 	}
 
-	@When("user select from and to cities")
-	public void user_select_from_location_and_to_location() {
-		browser.fromLocation();
-		browser.toLocation();
+	@When("user select {string} and {string} cities")
+	public void user_select_from_location_and_to_location(String from,String to) {
+		browser.fromLocation(from);
+		browser.toLocation(to);
 
 	}
 
-	@And("user select Departure date from calender")
-	public void user_select_departure_date() {
+	@Then("user select {string} from calender")
+	public void user_select_from_calender(String date) {
 		// Select departure date
-		browser.departureDate();
+		browser.departureDate(date);
 	}
 
 	@And("user click on search flight")

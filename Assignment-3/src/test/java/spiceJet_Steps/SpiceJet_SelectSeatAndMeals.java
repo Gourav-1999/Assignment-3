@@ -14,9 +14,9 @@ public class SpiceJet_SelectSeatAndMeals extends Select_Seat_Meals {
 	   System.out.println("Passenger Page");
 	}
 
-	@When("user first select seat")
-	public void user_first_select_seat() {
-	   SM.selectSeat();
+	@When("user first select {string}")
+	public void user_first_select_seat(String seat) {
+	   SM.selectSeat(seat);
 	}
 
 	@And("user book private row or extra seat for extra comfort and safety")

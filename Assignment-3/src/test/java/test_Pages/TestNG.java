@@ -1,9 +1,5 @@
 package test_Pages;
 
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -27,11 +23,11 @@ public class TestNG extends ChromeBrowser{
 	
 	
 	@Test(priority = 0)
-	public static void welcomeBoard() {
+	public static void welcomeBoard(String from, String to, String date) {
 		Welcome_Board WB = new Welcome_Board();
-		WB.fromLocation();
-		WB.toLocation();
-		WB.departureDate();
+		WB.fromLocation(from);
+		WB.toLocation(to);
+		WB.departureDate(date);
 		WB.searchButton();
 	}
 	@Test(priority = 1)
@@ -40,23 +36,29 @@ public class TestNG extends ChromeBrowser{
 		SF.selectFlight();
 		SF.continueButton();
 	}
+	
 	@Test(priority = 2)
-	public static void passengerDetails() {
+	public static void contactDetails(String title,String name,String lastName,String contact,String email,String city) {
 		PassengerDetails PD = new PassengerDetails();
-		PD.details();
-		PD.continueButton2();
+		PD.contactDetails(title,name,lastName,contact,email,city);
 	}
 	@Test(priority = 3)
-	public static void selectSeatAndMeal() throws InterruptedException {
+	public static void passengerDetails(String name,String lastName,String number) {
+		PassengerDetails PD = new PassengerDetails();
+		PD.passengerDetails(name,lastName,number);
+		PD.continueButton2();
+	}
+	@Test(priority = 4)
+	public static void selectSeatAndMeal(String seat) throws InterruptedException {
 		Select_Seat_Meals SM = new Select_Seat_Meals();
-		SM.selectSeat();
+		SM.selectSeat(seat);
 		SM.adjacentSeat();
 		SM.accept();
 		SM.cont_Meal_Button();
 		SM.selectMeal();
 		SM.continueButtonAgain();
 	}
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public static void payment() {
 		Payment pay = new Payment();
 		pay.fetchData();

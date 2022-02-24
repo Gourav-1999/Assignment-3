@@ -1,5 +1,6 @@
-package test_Pages;
+/*package test_Pages;
 
+import io.cucumber.datatable.DataTable;
 import spiceJet_Pages.ChromeBrowser;
 import spiceJet_Pages.PassengerDetails;
 import spiceJet_Pages.Payment;
@@ -12,8 +13,9 @@ public class Spice_Jet extends ChromeBrowser {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		welcomeBoard();
+		welcomeBoard(from,to,date);
 		selectFlight();
+		contactDetails();
 		passengerDetails();
 		selectSeatAndMeal();
 		payment();
@@ -27,11 +29,11 @@ public class Spice_Jet extends ChromeBrowser {
 		browser.launch_ChromeBrowser();
 	}
 	
-	public static void welcomeBoard() {
+	public static void welcomeBoard(String from, String to,String date) {
 		Welcome_Board WB = new Welcome_Board();
-		WB.fromLocation();
-		WB.toLocation();
-		WB.departureDate();
+		WB.fromLocation(from);
+		WB.toLocation(to);
+		WB.departureDate(date);
 		WB.searchButton();
 	}
 	
@@ -41,9 +43,14 @@ public class Spice_Jet extends ChromeBrowser {
 		SF.continueButton();
 	}
 	
-	public static void passengerDetails() {
+	public static void contactDetails(DataTable table1) {
 		PassengerDetails PD = new PassengerDetails();
-		PD.details();
+		PD.contactDetails(table1);
+	}
+	
+	public static void passengerDetails(DataTable table2) {
+		PassengerDetails PD = new PassengerDetails();
+		PD.passengerDetails(table2);
 		PD.continueButton2();
 	}
 	
@@ -64,4 +71,4 @@ public class Spice_Jet extends ChromeBrowser {
 		pay.convenienceFee();
 	}
 	
-}
+}*/

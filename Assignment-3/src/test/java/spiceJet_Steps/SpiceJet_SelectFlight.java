@@ -20,8 +20,8 @@ public class SpiceJet_SelectFlight extends Select_Flight{
 		System.out.println("Select Any Flight");
 	}
 
-	@And("user select spicemax radio button and fetch flight number and price")
-	public void user_select_spicemax_radio_button_and_fetch_flight_number_and_price() {
+	@And("user select spicemax and fetch flight number and price")
+	public void user_select_spicemax_and_fetch_flight_number_and_price() {
 
 		// select spice max button and fetch data
 		SF.selectFlight();
